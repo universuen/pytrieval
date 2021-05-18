@@ -1,4 +1,4 @@
-from src import config
+from pytrieval import config
 
 
 print(config.path.src)
