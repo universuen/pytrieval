@@ -9,7 +9,7 @@ Information Retrieval final project.
 
 ## Usage
 
-Simply run `tests/test.py` or:
+Simply run `tests/test_run.py` or:
 
 1. Import `Pytrieval` class from `pytrieval` package.
 2. Instantiate it and call its `run` method.
@@ -26,6 +26,4 @@ where `pw` refers to "positive word" and `nw` refers to "negative word". Here ar
 | --------------------- | ------------------------------------------------------------ |
 | house sun tree        | `News` objects related to "house", "sun" and "tree"          |
 | house sun EXCEPT tree | `News` objects related to "house" and "sun", but not related to "tree" |
-
-## Screenshots
 
