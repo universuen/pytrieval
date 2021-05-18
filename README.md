@@ -3,6 +3,7 @@
 Information Retrieval final project.
 
 ## Data Preparation
+
 1. Download zip file from [kaggle](https://www.kaggle.com/snapcrack/all-the-news) (any one of the 3 given files is fine).
 2. Decompress it into `data/`.
 3. Use `scripts/csv2db.py` to transfer the csv file to database.
@@ -27,3 +28,10 @@ where `pw` refers to "positive word" and `nw` refers to "negative word". Here ar
 | house sun tree        | `News` objects related to "house", "sun" and "tree"          |
 | house sun EXCEPT tree | `News` objects related to "house" and "sun", but not related to "tree" |
 
+## Screenshots
+
+![image-20210519002348450](C:\Users\universuen\AppData\Roaming\Typora\typora-user-images\image-20210519002348450.png)
+
+![image-20210519012518945](C:\Users\universuen\AppData\Roaming\Typora\typora-user-images\image-20210519012518945.png)
+
+![image-20210519013138616](C:\Users\universuen\AppData\Roaming\Typora\typora-user-images\image-20210519013138616.png)

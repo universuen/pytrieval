@@ -31,7 +31,7 @@ while True:
     except OverflowError:
         maxsize = int(maxsize / 10)
 
-with open(path.data / 'articles.csv', 'r', newline='') as f:
+with open(path.data / 'articles.csv', 'r', newline='', encoding='utf8') as f:
     csv_reader = csv.reader(f)
     for idx, item in tqdm(enumerate(csv_reader)):
         if idx == 0:
