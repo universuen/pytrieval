@@ -20,7 +20,7 @@ class IndexEngine:
 
     def build(self):
         self.logger.info('building index engine from dataset')
-        # load all news in the database
+        # load all news from the database
         for i in tqdm(range(self.db_handler.size)):
             news_id = i + 1
             news = self.db_handler.query(id=news_id)[0]

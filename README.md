@@ -13,3 +13,19 @@ Simply run `tests/test.py` or:
 
 1. Import `Pytrieval` class from `pytrieval` package.
 2. Instantiate it and call its `run` method.
+
+## Query Format
+
+```
+pw_1 pw_2 pw_3 ... EXCEPT nw_1 nw_2 nw_3 ...
+```
+
+where `pw` refers to "positive word" and `nw` refers to "negative word". Here are some examples:
+
+| Query                 | Result                                                       |
+| --------------------- | ------------------------------------------------------------ |
+| house sun tree        | `News` objects related to "house", "sun" and "tree"          |
+| house sun EXCEPT tree | `News` objects related to "house" and "sun", but not related to "tree" |
+
+## Screenshots
+
