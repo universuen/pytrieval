@@ -8,7 +8,7 @@ class QueryParser:
     def __init__(self):
         pass
 
-    def parse(self, query: str) -> tuple[list[str], list[str]]:
+    def parse_query(self, query: str) -> tuple[list[str], list[str]]:
         words = query.split()
         positive_tokens = list()
         negative_tokens = list()

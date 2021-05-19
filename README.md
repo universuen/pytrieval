@@ -15,10 +15,18 @@ Simply run `tests/test_run.py` or:
 1. Import `Pytrieval` class from `pytrieval` package.
 2. Instantiate it and call its `run` method.
 
-## Query Format
+### Setting
+
+set the maximum number of displayed items
+
+```SET {num}```
+
+where `num` refers to the max size you want to set.
+
+### Query
 
 ```
-pw_1 pw_2 pw_3 ... EXCEPT nw_1 nw_2 nw_3 ...
+{pw_1} {pw_2} {pw_3} ... EXCEPT {nw_1} {nw_2} {nw_3} ...
 ```
 
 where `pw` refers to "positive word" and `nw` refers to "negative word". Here are some examples:
@@ -27,6 +35,14 @@ where `pw` refers to "positive word" and `nw` refers to "negative word". Here ar
 | --------------------- | ------------------------------------------------------------ |
 | house sun tree        | `News` objects related to "house", "sun" and "tree"          |
 | house sun EXCEPT tree | `News` objects related to "house" and "sun", but not related to "tree" |
+
+### Selection
+
+Show details of the item you select.
+
+```SELECT {id}```
+
+where `id` refers to the item id. 
 
 ## Screenshots
 
