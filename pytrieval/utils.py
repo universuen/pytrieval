@@ -28,4 +28,4 @@ def tokenize(text: str) -> list[tuple[str, int]]:
         nltk.download('punkt')
         nltk.download('stopwords')
         nltk.download('wordnet')
-        tokenize(text)
+        return tokenize(text)
