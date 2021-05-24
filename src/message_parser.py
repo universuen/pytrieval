@@ -1,5 +1,5 @@
 """
-Definition of QueryParser
+Definition of MessageParser
 """
 from typing import Union
 
