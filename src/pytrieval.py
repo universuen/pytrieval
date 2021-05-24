@@ -21,7 +21,7 @@ class Pytrieval:
         self.parser = MessageParser()
         self.config = {
             'max_size': 10,
-            'mode': 'TFIDF'
+            'mode': 'FREQ'
         }
 
         self.logger.info('loading index engine')
