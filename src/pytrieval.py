@@ -173,10 +173,7 @@ class Pytrieval:
 
     def _display_brief(self, news_id: int):
         news = self.db_handler.query(id=news_id)[0]
-        content = news.content[:197] + '...'
-        while len(content) > 0:
-            print(content[:100])
-            content = content[100:]
+        print(news.content[:197] + '...')
 
     def _display_details(self, news_id: int):
         news = self.db_handler.query(id=news_id)[0]
@@ -185,6 +182,4 @@ class Pytrieval:
         print(f'Publication: {news.publication}')
         content = news.content
         print(f'Content:')
-        while len(content) > 0:
-            print(content[:100])
-            content = content[100:]
+        print(content)
