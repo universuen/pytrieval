@@ -8,10 +8,9 @@ import sys
 
 from tqdm import tqdm
 
-from pytrieval.config import path
-from pytrieval.database.handler import Handler
-from pytrieval.database.models import News
-from pytrieval import config
+from src.database.handler import Handler
+from src.database.models import News
+from src import config
 
 config.logger.level = 'INFO'
 handler = Handler(config.database.url)
@@ -23,7 +22,7 @@ from: https://stackoverflow.com/questions/15063936/csv-error-field-larger-than-f
 """
 maxsize = sys.maxsize
 while True:
-    # decrease the maxInt value by factor 10
+    # decrease the maxsize value by factor 10
     # as long as the OverflowError occurs.
     try:
         csv.field_size_limit(maxsize)
@@ -31,7 +30,7 @@ while True:
     except OverflowError:
         maxsize = int(maxsize / 10)
 
-with open(path.data / 'articles1.csv', 'r', newline='', encoding='utf8') as f:
+with open(config.path.data / 'articles1.csv', 'r', newline='', encoding='utf8') as f:
     csv_reader = csv.reader(f)
     for idx, item in tqdm(enumerate(csv_reader)):
         if idx == 0:

@@ -1,4 +1,5 @@
 from collections import Counter
+from typing import Union
 
 from nltk import word_tokenize, WordNetLemmatizer
 from nltk.corpus import stopwords
@@ -29,3 +30,10 @@ def tokenize(text: str) -> list[tuple[str, int]]:
         nltk.download('stopwords')
         nltk.download('wordnet')
         return tokenize(text)
+
+
+def tuple_list2dict(list_: list[tuple[int, Union[int, float]]]) -> dict[int, Union[int, float]]:
+    ret = dict()
+    for i, j in list_:
+        ret[i] = j
+    return ret

@@ -10,10 +10,7 @@ Information Retrieval final project.
 
 ## Usage
 
-Simply run `tests/test_run.py` or:
-
-1. Import `Pytrieval` class from `pytrieval` package.
-2. Instantiate it and call its `run` method.
+Run `src/main.py` .
 
 ### Setting
 
@@ -43,11 +40,3 @@ Show details of the item you select.
 ```SELECT {id}```
 
 where `id` refers to the item id. 
-
-## Screenshots
-
-![image-20210519002348450](C:\Users\universuen\AppData\Roaming\Typora\typora-user-images\image-20210519002348450.png)
-
-![image-20210519012518945](C:\Users\universuen\AppData\Roaming\Typora\typora-user-images\image-20210519012518945.png)
-
-![image-20210519013138616](C:\Users\universuen\AppData\Roaming\Typora\typora-user-images\image-20210519013138616.png)

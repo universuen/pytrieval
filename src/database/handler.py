@@ -1,8 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from pytrieval.database.models import Base, News
-from pytrieval.logger import Logger
+from src.database.models import Base, News
+from src.logger import Logger
 
 
 class Handler:
