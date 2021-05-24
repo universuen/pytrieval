@@ -5,4 +5,5 @@ project = src.parent
 data = project / 'data'
 
 
-engine_map = data / 'engine_map.pkl'
+freq_engine_map = data / 'freq_engine_map.pkl'
+tfidf_engine_map = data / 'tfidf_engine_map.pkl'

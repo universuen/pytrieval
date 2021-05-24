@@ -7,8 +7,8 @@ from src.logger import Logger
 from src.database.handler import Handler
 from src.index_engine import IndexEngine
 from src.message_parser import MessageParser
-from src import config
 from src.utils import tuple_list2dict
+from src import config
 
 
 class Pytrieval:
@@ -18,22 +18,34 @@ class Pytrieval:
         self.logger.info('initializing ...')
         self.db_handler = Handler(config.database.url)
         self.engine = IndexEngine(self.db_handler)
-        self.engine.logger.disabled = True
         self.parser = MessageParser()
         self.config = {
             'max_size': 10,
-            'mode': 'FREQ'
+            'mode': 'TFIDF'
         }
 
-        self.logger.debug('loading index engine')
-        try:
-            self.engine.load(config.path.engine_map)
-        except Exception as e:
-            self.logger.debug(f'failed to load the existing engine due to {e}')
-            self.logger.debug('building new engine')
-            self.engine.build()
-            self.logger.debug('engine was built successfully')
-            self.engine.save(config.path.engine_map)
+        self.logger.info('loading index engine')
+        self._load_engine()
+
+    def _load_engine(self):
+        if self.config['mode'] == 'FREQ':
+            try:
+                self.engine.load(config.path.freq_engine_map)
+            except Exception as e:
+                self.logger.info(f'failed to load the existing engine due to {e}')
+                self.logger.info('building new engine')
+                self.engine.build_freq_engine()
+                self.logger.info('engine was built successfully')
+                self.engine.save(config.path.freq_engine_map)
+        elif self.config['mode'] == 'TFIDF':
+            try:
+                self.engine.load(config.path.tfidf_engine_map)
+            except Exception as e:
+                self.logger.info(f'failed to load the existing engine due to {e}')
+                self.logger.info('building new engine')
+                self.engine.build_tfidf_engine()
+                self.logger.info('engine was built successfully')
+                self.engine.save(config.path.tfidf_engine_map)
 
     def run(self):
 
@@ -49,6 +61,8 @@ class Pytrieval:
                     print('Wrong setting command. Read README.md for instructions.')
                 else:
                     self.config[item] = value
+                    if item == 'mode':
+                        self._load_engine()
 
             elif self.parser.is_selection(msg):
                 news_id = self.parser.parse_selection(msg, self.db_handler.size)
