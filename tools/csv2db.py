@@ -5,12 +5,18 @@ This file is used to convert csv file to database file.
 import csv
 from datetime import datetime
 import sys
+import os
+
+sys.path.insert(0, os.getcwd())
 
 from tqdm import tqdm
 
 from src.database.handler import Handler
 from src.database.models import News
 from src import config
+
+# the maximum number of items you want to insert into database
+MAX_SIZE = 1000
 
 config.logger.level = 'INFO'
 handler = Handler(config.database.url)
@@ -45,5 +51,7 @@ with open(config.path.data / 'articles1.csv', 'r', newline='', encoding='utf8') 
                 content=item[9]
             )
         )
+        if idx == MAX_SIZE:
+            break
 
 print('finished')

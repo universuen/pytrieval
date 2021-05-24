@@ -16,6 +16,7 @@ class IndexEngine:
     def __init__(self, db_handler: Handler):
         self.db_handler = db_handler
         self.db_handler.logger.disabled = True
+        self.size = self.db_handler.size
         self.logger = Logger(self.__class__.__name__)
         self.idx_map = dict()
 
@@ -23,7 +24,7 @@ class IndexEngine:
         self.idx_map = dict()
         self.logger.info('building index engine in "freq" mode')
         # load all news from the database
-        for i in tqdm(range(self.db_handler.size)):
+        for i in tqdm(range(self.size)):
             news_id = i + 1
             news = self.db_handler.query(id=news_id)[0]
             # build raw text
@@ -43,7 +44,7 @@ class IndexEngine:
         self.build_freq_engine()
         self.logger.disabled = False
         # then calculate every item's TF-IDF in the map
-        total_num = self.db_handler.size
+        total_num = self.size
         self.logger.info('calculating TF-IDF for each word')
         for word in tqdm(self.idx_map.keys()):
             text_num = len(self.idx_map[word])
