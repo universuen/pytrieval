@@ -1,7 +1,8 @@
 import sys
-import os
 
-sys.path.insert(0, os.getcwd())
+from config.path import project
+
+sys.path.insert(0, str(project))
 
 if __name__ == '__main__':
     from pytrieval import Pytrieval

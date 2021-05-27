@@ -1,6 +1,7 @@
 """
 Definition of Pytrieval
 """
+import time
 from typing import Union
 
 from src.logger import Logger
@@ -21,7 +22,7 @@ class Pytrieval:
         self.parser = MessageParser()
         self.config = {
             'max_size': 10,
-            'mode': 'FREQ'
+            'mode': 'TFIDF'
         }
 
         self.logger.info('loading index engine')
@@ -72,6 +73,7 @@ class Pytrieval:
                     self._display_details(news_id)
 
             else:
+                start_time = time.perf_counter()
                 token_lists, operators = self.parser.parse_query(msg)
                 news_lists = []
                 for token_list in token_lists:
@@ -82,7 +84,6 @@ class Pytrieval:
                         else:
                             news_list = self._and_merge(news_list, self.engine.get(token))
                     news_lists.append(news_list)
-
                 operation_switch = {
                     'AND': self._and_merge,
                     'OR': self._or_merge,
@@ -92,6 +93,8 @@ class Pytrieval:
                 for opt in operators:
                     current_result = operation_switch[opt](current_result, news_lists.pop(0))
                 current_result = self._sort_by_score(current_result)
+                end_time = time.perf_counter()
+                print(f'\n[found {len(current_result)} results in {end_time - start_time}s]')
                 for i, j in enumerate(current_result):
                     if i == self.config['max_size']:
                         break

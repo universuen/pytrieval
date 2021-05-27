@@ -39,12 +39,12 @@ def get_text_size(text: str) -> int:
 
 def get_tfidf(
         word_num: int,  # the number of the particular word in the text
-        text_size: int,  # the number of words in the text
+        total_word_num: int,  # the number of words in the text
         text_num: int,  # the number of texts containing the particular
-        total_num: int  # the number of all texts
+        total_text_num: int  # the number of all texts
 ):
-    tf = word_num / text_size
-    idf = log(total_num / (1 + text_num))
+    tf = word_num / total_word_num
+    idf = log(total_text_num / (1 + text_num))
     return tf * idf
 
 

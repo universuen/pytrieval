@@ -16,7 +16,7 @@ from src.database.models import News
 from src import config
 
 # the maximum number of items you want to insert into database
-MAX_SIZE = 1000
+MAX_SIZE = -1
 
 config.logger.level = 'INFO'
 handler = Handler(config.database.url)
@@ -36,7 +36,7 @@ while True:
     except OverflowError:
         maxsize = int(maxsize / 10)
 
-with open(config.path.data / 'articles1.csv', 'r', newline='', encoding='utf8') as f:
+with open(config.path.data / 'articles.csv', 'r', newline='', encoding='utf8') as f:
     csv_reader = csv.reader(f)
     for idx, item in tqdm(enumerate(csv_reader)):
         if idx == 0:
