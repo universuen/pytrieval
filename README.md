@@ -13,10 +13,7 @@ A sample database containing 1k items is provided in  `data/` folder. If you wan
 
 ## Usage
 
-Run following commands in the project root:
-
-1. `pip install -r requirements.txt`
-2. `py -m pytrieval.main`
+Run `pip install -r requirements.txt` from the project root, then run the file `pytrieval/main.py`.
 
 ### Setting
 
