@@ -5,12 +5,18 @@ from math import log
 from nltk import word_tokenize, WordNetLemmatizer
 from nltk.corpus import stopwords
 
+from pytrieval.config import path
+
 
 def lemmatize(word: str) -> str:
-    lemma = WordNetLemmatizer()
-    word = lemma.lemmatize(word, 'v')
-    word = lemma.lemmatize(word, 'n')
-    return word
+    try:
+        lemma = WordNetLemmatizer()
+        word = lemma.lemmatize(word, 'v')
+        word = lemma.lemmatize(word, 'n')
+        return word
+    except LookupError:
+        import nltk
+        nltk.download('wordnet')
 
 
 def tokenize(text: str) -> list[tuple[str, int]]:

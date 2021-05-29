@@ -4,6 +4,8 @@ Definition of Pytrieval
 import time
 from typing import Union
 
+import nltk
+
 from pytrieval.logger import Logger
 from pytrieval.database.handler import Handler
 from pytrieval.index_engine import IndexEngine
@@ -14,6 +16,7 @@ from pytrieval import config
 
 class Pytrieval:
     def __init__(self):
+        nltk.data.path.append(config.path.data / 'nltk')
         self.logger = Logger(self.__class__.__name__)
 
         self.logger.info('initializing ...')
