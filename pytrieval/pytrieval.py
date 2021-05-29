@@ -4,12 +4,12 @@ Definition of Pytrieval
 import time
 from typing import Union
 
-from src.logger import Logger
-from src.database.handler import Handler
-from src.index_engine import IndexEngine
-from src.message_parser import MessageParser
-from src.utils import tuple_list2dict
-from src import config
+from pytrieval.logger import Logger
+from pytrieval.database.handler import Handler
+from pytrieval.index_engine import IndexEngine
+from pytrieval.message_parser import MessageParser
+from pytrieval.utils import tuple_list2dict
+from pytrieval import config
 
 
 class Pytrieval:

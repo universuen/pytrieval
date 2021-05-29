@@ -4,13 +4,19 @@ Information Retrieval final project.
 
 ## Data Preparation
 
-1. Download zip file from [kaggle](https://www.kaggle.com/snapcrack/all-the-news) (any one of the 3 given files is fine).
-2. Decompress it into `data/`.
-3. Run `scripts/csv2db.py` to transfer the csv file to database.
+A sample database containing 1k items is provided in  `data/` folder. If you wanna fetch all 50k data, do the followings:
+
+1. Remove all files in `data/`.
+2. Download zip file from [kaggle](https://www.kaggle.com/snapcrack/all-the-news) (any one of the 3 given files is fine).
+3. Decompress it into `data/`.
+4. Run `tools/csv2db.py` to transfer the csv file to database.
 
 ## Usage
 
-Run `src/main.py` .
+Run following commands in the project root:
+
+1. `pip install -r requirements.txt`
+2. `py -m pytrieval.main`
 
 ### Setting
 

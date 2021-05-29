@@ -11,9 +11,9 @@ sys.path.insert(0, os.getcwd())
 
 from tqdm import tqdm
 
-from src.database.handler import Handler
-from src.database.models import News
-from src import config
+from pytrieval.database.handler import Handler
+from pytrieval.database.models import News
+from pytrieval import config
 
 # the maximum number of items you want to insert into database
 MAX_SIZE = -1

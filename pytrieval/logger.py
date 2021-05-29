@@ -1,6 +1,6 @@
 import logging
 
-from src import config
+from pytrieval import config
 
 
 class Logger(logging.Logger):

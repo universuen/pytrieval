@@ -6,9 +6,9 @@ from typing import Union
 
 from tqdm import tqdm
 
-from src.database.handler import Handler
-from src.logger import Logger
-from src.utils import tokenize, get_text_size, get_tfidf
+from pytrieval.database.handler import Handler
+from pytrieval.logger import Logger
+from pytrieval.utils import tokenize, get_text_size, get_tfidf
 
 
 class IndexEngine:

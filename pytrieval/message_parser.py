@@ -3,8 +3,8 @@ Definition of MessageParser
 """
 from typing import Union
 
-from src.utils import lemmatize
-from src.logger import Logger
+from pytrieval.utils import lemmatize
+from pytrieval.logger import Logger
 
 
 class MessageParser:
