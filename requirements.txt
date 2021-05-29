@@ -1,3 +1,4 @@
 sqlalchemy
 tqdm
 nltk
+sytk
