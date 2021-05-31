@@ -15,7 +15,7 @@ If you wanna fetch all 50k data, do the followings:
 
 ## Usage
 
-Run `pip install -r requirements.txt` from the project root, then run main.py`.
+Run `pip install -r requirements.txt` from the project root, then run `main.py`.
 
 ## Instruction
 
