@@ -2,18 +2,22 @@
 
 Information Retrieval final project.
 
-## Data Preparation
+## Data Preparation (Optional)
 
-A sample database containing 1k items is provided in  `data/` folder. If you wanna fetch all 50k data, do the followings:
+**A sample database containing 1k items is provided in  `data/` folder.** 
 
-1. Remove all files in `data/`.
+If you wanna fetch all 50k data, do the followings:
+
+1. Remove all files in `data/` except `data/nltk`
 2. Download zip file from [kaggle](https://www.kaggle.com/snapcrack/all-the-news) (any one of the 3 given files is fine).
 3. Decompress it into `data/`.
 4. Run `tools/csv2db.py` to transfer the csv file to database.
 
 ## Usage
 
-Run `pip install -r requirements.txt` from the project root, then run the file `pytrieval/main.py`.
+Run `pip install -r requirements.txt` from the project root, then run main.py`.
+
+## Instruction
 
 ### Setting
 
