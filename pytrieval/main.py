@@ -1,6 +1,11 @@
-from sytk.hack import add_context
+"""
+Interface to activate the whole project.
+"""
 
-add_context()
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).absolute().parent.parent))
 
 if __name__ == '__main__':
     from pytrieval import Pytrieval
