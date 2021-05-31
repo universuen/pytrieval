@@ -24,7 +24,7 @@ class Pytrieval:
         self.engine = IndexEngine(self.db_handler)
         self.parser = MessageParser()
         self.config = {
-            'max_size': 10,
+            'max_size': 5,
             'mode': 'TFIDF'
         }
 
@@ -179,13 +179,13 @@ class Pytrieval:
 
     def _display_brief(self, news_id: int):
         news = self.db_handler.query(id=news_id)[0]
-        print(news.content[:197] + '...')
+        print(news.content[:197] + '...\n')
 
     def _display_details(self, news_id: int):
         news = self.db_handler.query(id=news_id)[0]
-        print(f'Title: {news.title}')
-        print(f'Author: {news.author}')
-        print(f'Publication: {news.publication}')
+        print(f'\nTitle: {news.title}')
+        print(f'\nAuthor: {news.author}')
+        print(f'\nPublication: {news.publication}')
         content = news.content
-        print(f'Content:')
-        print(content)
+        print(f'\nContent:')
+        print(content, end='\n\n')
