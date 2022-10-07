@@ -6,7 +6,7 @@ Information Retrieval final project.
 
 **A sample database containing 1k items is provided in  `data/` folder.** 
 
-If you wanna fetch all 50k data, do the followings:
+If you want to fetch all 50k data, do the followings:
 
 1. Remove all files in `data/` except `data/nltk`
 2. Download zip file from [kaggle](https://www.kaggle.com/snapcrack/all-the-news) (any one of the 3 given files is fine).
