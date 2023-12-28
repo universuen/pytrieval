@@ -1,7 +1,5 @@
 # Pytrieval
 
-Information Retrieval final project.
-
 ## Data Preparation (Optional)
 
 **A sample database containing 1k items is provided in  `data/` folder.** 
